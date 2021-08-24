@@ -1,0 +1,19 @@
+<div class="container main">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Recipe Titles</h3>
+           
+            <div class="list-group">
+                <ng-container  *ngFor="let recipe of listRecipe">
+                    <a href="#" class="list-group-item list-group-item-action "  (click)="changeRecipe(recipe)">
+                        {{recipe.title}}
+                      </a>
+                </ng-container>
+               
+              </div>
+        </div>
+        <div class="col-md-4 offset-md-4">
+            <app-recipe-details [recipe]="recipe"></app-recipe-details>
+        </div>
+    </div>
+</div>
