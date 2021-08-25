@@ -9,10 +9,14 @@
                         {{recipe.title}}
                       </a>
                 </ng-container>
+
+                <a href="#" class="list-group-item list-group-item-action " *ngIf=" listRecipe.length == 0"  >
+                    There is no recipes
+                  </a>
                
               </div>
         </div>
-        <div class="col-md-4 offset-md-4">
+        <div class="col-md-4 offset-md-4" *ngIf="recipe">
             <app-recipe-details [recipe]="recipe"></app-recipe-details>
         </div>
     </div>

@@ -14,12 +14,13 @@ export class RecipeListComponent implements OnInit {
   ) { }
 
   listRecipe:Recipe[]=[]
-  recipe:Recipe;
+  recipe:Recipe=null;
   ngOnInit(): void {
     this.recipeService.getAll().subscribe(
       data=>{
         this.listRecipe=data;
-        this.recipe=data[0]
+        if(data.length > 0)
+          this.recipe=data[0]
       },
       err=>{
         console.log(err)
